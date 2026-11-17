@@ -1,10 +1,10 @@
 ---
 title: waypoint_path
-description: 
-published: true
-date: 2024-10-23T19:42:42.338Z
+description: Beginner-friendly description of flags
 tags: database, master, world
+published: true
 editor: markdown
+date: 2024-10-23T19:42:42.338Z
 dateCreated: 2024-02-11T20:26:37.382Z
 ---
 
@@ -42,6 +42,11 @@ Unique ID for each path.
 | 0x01 | FollowPathBackwardsFromEndToStart |
 | 0x02 | ExactSplinePath |
 
+When no flags are used, a unit will move directly from its last waypoint to the first. If the first and last point have the same position, the unit will move in a loop.
+
+**FollowPathBackwardsFromEndToStart** does exactly as its name implies - at the last waypoint, the creature will turn around a follow the path back to the start.
+
+**ExactSplinePath** smooths the path. Without it, a unit will move in a straight line from one point to the next, and turn sharply towards the next point. With ExactSplinePath enabled, the path transition between points is smoothed, making the motion more organic. For example, hexagonal loop will become a circle.
 &nbsp;
 
 ### Velocity
