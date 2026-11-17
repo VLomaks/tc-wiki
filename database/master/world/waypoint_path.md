@@ -67,6 +67,8 @@ For example: `<Npc name> - Cosmetic Path` if this path is assigned in [`creature
 &nbsp;
 
 ## Additional Notes
+Waypoint movement needs to be enabled in either the creature or creature_template table, but setting the creature's [`movement type`](/database/master/world/creature_template#movementtype) to **2**. The pathID is entered into the creature_addon or creature_template_addon tables, unless the waypoint movement is triggered by smartAI.
+
 One simple way to set the PathId is to take the [`entry`](/database/master/world/creature_template#entry) of the creature it belongs to, and multiply it by 10. Or by 100, if more than ten of the same creature have unique paths. These can be defined with variables in SQL:
 ```
 SET @GUARD := 37944;
